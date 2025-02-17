@@ -1,0 +1,5783 @@
+{
+	"info": {
+		"_postman_id": "d2dbf6bf-6d15-45af-8e04-f69cb1367029",
+		"name": "Admin - Dashboard",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41749141",
+		"_collection_link": "https://crimson-space-606996.postman.co/workspace/Tajzea~4e2ee84f-5d29-49e5-8fe9-42b128cd3518/collection/41749141-d2dbf6bf-6d15-45af-8e04-f69cb1367029?action=share&source=collection_link&creator=41749141"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/profile",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/profile",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Jan 2025 18:33:42 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Super Admin\",\n        \"email\": \"admin@email.com\",\n        \"phone\": null,\n        \"status\": \"api.active\",\n        \"role_id\": 1,\n        \"permissions\": [\n            {\n                \"action\": \"manage\",\n                \"subject\": \"all\"\n            }\n        ]\n    },\n    \"status\": 200,\n    \"message\": \"api.success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@email.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/login",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@email.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}/admin/login",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 16:17:17 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"api.login_success\",\n    \"data\": {\n        \"admin\": {\n            \"id\": 1,\n            \"name\": \"Super Admin\",\n            \"email\": \"admin@email.com\",\n            \"role_id\": 1,\n            \"permissions\": [\n                {\n                    \"action\": \"manage\",\n                    \"subject\": \"all\"\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Send Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@email.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/send-reset-password",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"send-reset-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Reset Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@email.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}/admin/send-reset-password",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"send-reset-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 17:38:10 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"auth.reset_sent\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@email.com",
+									"type": "text"
+								},
+								{
+									"key": "otp",
+									"value": "1111",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin@admin@12341234",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "admin@admin@12341234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/reset-password",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"reset-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Password Resets",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@email.com",
+											"type": "text"
+										},
+										{
+											"key": "otp",
+											"value": "1111",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "admin@admin@12341234",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "admin@admin@12341234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}/admin/reset-password",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"reset-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 17:51:48 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"auth.password_reset\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Verify Invitation",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/invitation/verify/TewjHnOFBp08HMx85QmvbhnS4J2KPvQCvW7eI1UUiROsiqWhtEVdxxQQ69Rk",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"invitation",
+								"verify",
+								"TewjHnOFBp08HMx85QmvbhnS4J2KPvQCvW7eI1UUiROsiqWhtEVdxxQQ69Rk"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Verify Invitation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/invitation/verify/zjgJs8ejxi88Ts3qQWBO0CCPqhJoPTM9bbilPvAQlGSaiaQRwd7MLowbDFF5",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"invitation",
+										"verify",
+										"zjgJs8ejxi88Ts3qQWBO0CCPqhJoPTM9bbilPvAQlGSaiaQRwd7MLowbDFF5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 21:10:55 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"admin.Token verified\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Invitation Set Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "token",
+									"value": "TewjHnOFBp08HMx85QmvbhnS4J2KPvQCvW7eI1UUiROsiqWhtEVdxxQQ69Rk",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin@admin@1234",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "admin@admin@1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/invitation/set-password",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"invitation",
+								"set-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/logout",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/logout",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Jan 2025 18:33:55 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"messages.successLogOut\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admins",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/admins?search=Super",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"admins"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "Super"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/admins",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"admins"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 18:10:08 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Super Admin\",\n            \"email\": \"admin@email.com\",\n            \"phone\": null,\n            \"status\": \"api.active\",\n            \"role_id\": 1,\n            \"permissions\": [\n                {\n                    \"action\": \"manage\",\n                    \"subject\": \"all\"\n                }\n            ]\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://willgo.test/admin/admins?page=1\",\n        \"last\": \"http://willgo.test/admin/admins?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/admins?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://willgo.test/admin/admins\",\n        \"per_page\": 10,\n        \"to\": 1,\n        \"total\": 1\n    },\n    \"status\": 200,\n    \"message\": \"api.success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "ahmed eid",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "yaaasusteqr.77@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+698498498",
+									"type": "text"
+								},
+								{
+									"key": "state_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "region_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "role_ids[0]",
+									"value": "1",
+									"description": "Array",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/admins",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"admins"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Admin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "ahmed eid",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "ahmedeed240@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "role_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}/admin/admins",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"admins"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 20:46:21 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 12,\n        \"name\": \"ahmed eid\",\n        \"email\": \"ahmedeed240@gmail.com\",\n        \"phone\": null,\n        \"status\": \"api.invited\",\n        \"role_id\": 1,\n        \"permissions\": [\n            {\n                \"action\": \"manage\",\n                \"subject\": \"all\"\n            }\n        ]\n    },\n    \"status\": 200,\n    \"message\": \"api.success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "verify Admin OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/admins/1",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"admins",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "ahmed eid",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "yasser.m22292@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+698498498",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "state_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "region_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "role_ids[0]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "role_ids[1]",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/admins/:admin",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"admins",
+								":admin"
+							],
+							"variable": [
+								{
+									"key": "admin",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/admins/1/update-status?status=1",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"admins",
+								"1",
+								"update-status"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1",
+									"description": "INACTIVE = 0, ACTIVE = 1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/roles?search=test",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"roles"
+							],
+							"query": [
+								{
+									"key": "guard",
+									"value": "admin",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "test"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/roles",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 18:28:34 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Super Admin\",\n            \"edit\": false,\n            \"permissions\": {\n                \"admin\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"create_admin\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"read_admin\"\n                    },\n                    {\n                        \"id\": 3,\n                        \"name\": \"update_admin\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"delete_admin\"\n                    }\n                ],\n                \"role\": [\n                    {\n                        \"id\": 5,\n                        \"name\": \"create_role\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"name\": \"read_role\"\n                    },\n                    {\n                        \"id\": 7,\n                        \"name\": \"update_role\"\n                    },\n                    {\n                        \"id\": 8,\n                        \"name\": \"delete_role\"\n                    }\n                ],\n                \"user\": [\n                    {\n                        \"id\": 9,\n                        \"name\": \"create_user\"\n                    },\n                    {\n                        \"id\": 10,\n                        \"name\": \"read_user\"\n                    },\n                    {\n                        \"id\": 11,\n                        \"name\": \"update_user\"\n                    },\n                    {\n                        \"id\": 12,\n                        \"name\": \"delete_user\"\n                    }\n                ],\n                \"reports\": [\n                    {\n                        \"id\": 13,\n                        \"name\": \"read_reports\"\n                    }\n                ]\n            }\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://willgo.test/admin/roles?page=1\",\n        \"last\": \"http://willgo.test/admin/roles?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/roles?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://willgo.test/admin/roles\",\n        \"per_page\": 10,\n        \"to\": 1,\n        \"total\": 1\n    },\n    \"status\": 200,\n    \"message\": \"api.success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Show Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/roles/9",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"roles",
+								"9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show Role",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/roles/2",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"roles",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 18:45:46 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"test-role\",\n        \"edit\": true,\n        \"permissions\": []\n    },\n    \"status\": 200,\n    \"message\": \"api.success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test11",
+									"type": "text"
+								},
+								{
+									"key": "permissions[0]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "permissions[1]",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "permissions[2]",
+									"value": "3",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/roles",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"roles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Role",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "test-role",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}/admin/roles",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 18:43:11 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"api.created_successfully\",\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"test-role21\",\n        \"edit\": true,\n        \"permissions\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "test-updated",
+									"type": "text"
+								},
+								{
+									"key": "statu1s",
+									"value": "0",
+									"description": "0 => Inacvtive , 1 => Active ",
+									"type": "text"
+								},
+								{
+									"key": "permissions[0]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/roles/9",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"roles",
+								"9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Role",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "test-updated",
+											"type": "text"
+										},
+										{
+											"key": "statu1s",
+											"value": "0",
+											"description": "0 => Inacvtive , 1 => Active ",
+											"type": "text"
+										},
+										{
+											"key": "permissions[0]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}/admin/roles/9",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"roles",
+										"9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 18:55:26 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"admin.updated_successfully\",\n    \"data\": {\n        \"id\": 9,\n        \"name\": \"test-updated\",\n        \"status\": 0,\n        \"status_label\": \"inactive\",\n        \"edit\": true,\n        \"permissions\": {\n            \"admin\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"read_admin\"\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/roles/2",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"roles",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Role",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/roles/6",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"roles",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 20:17:50 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"admin.deleted_successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "All Permissions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/permissions",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"permissions"
+							],
+							"query": [
+								{
+									"key": "guard_name",
+									"value": "admin",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/roles/1/update-status?status=1",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"roles",
+								"1",
+								"update-status"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1",
+									"description": "INACTIVE = 0, ACTIVE = 1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Retailers",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/retailers?status=1",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"retailers"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								},
+								{
+									"key": "search",
+									"value": "test",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/retailers/12",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"retailers",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone",
+									"value": "01007642441",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "ahmed eid",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "district",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "region",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "street_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "owner_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "additional_phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/retailers/12",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"retailers",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wholesaler",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/wholesalers?status=1&search=test",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"wholesalers"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								},
+								{
+									"key": "search",
+									"value": "test"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/wholesalers/1",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"wholesalers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone",
+									"value": "01007642441",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "ahmed eid",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "district",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "region",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "street_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "owner_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "additional_phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/wholesalers/1",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"wholesalers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/products?search=Product 954",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"products"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "Product 954"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/products",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Feb 2025 21:39:28 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 9,\n            \"name\": \"new Product\",\n            \"description\": null,\n            \"class_name\": \"test\",\n            \"category_name\": \"test\",\n            \"type_name\": \"test\",\n            \"status\": \"Active\",\n            \"created_by\": \"Super Admin\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"new Product\",\n            \"description\": null,\n            \"class_name\": \"test\",\n            \"category_name\": \"test\",\n            \"type_name\": \"test\",\n            \"status\": \"Active\",\n            \"created_by\": \"Super Admin\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"new Product\",\n            \"description\": null,\n            \"class_name\": \"test\",\n            \"category_name\": \"test\",\n            \"type_name\": \"test\",\n            \"status\": \"Active\",\n            \"created_by\": \"Super Admin\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"new Product\",\n            \"description\": null,\n            \"class_name\": \"test\",\n            \"category_name\": \"test\",\n            \"type_name\": \"test\",\n            \"status\": \"Active\",\n            \"created_by\": \"Super Admin\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"new Product\",\n            \"description\": null,\n            \"class_name\": \"test\",\n            \"category_name\": \"test\",\n            \"type_name\": \"test\",\n            \"status\": \"Active\",\n            \"created_by\": \"Super Admin\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"new Product\",\n            \"description\": null,\n            \"class_name\": \"test\",\n            \"category_name\": \"test\",\n            \"type_name\": \"test\",\n            \"status\": \"Active\",\n            \"created_by\": \"Super Admin\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"new Product\",\n            \"description\": null,\n            \"class_name\": \"test\",\n            \"category_name\": \"test\",\n            \"type_name\": \"test\",\n            \"status\": \"Active\",\n            \"created_by\": \"Super Admin\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"new Product\",\n            \"description\": null,\n            \"class_name\": \"test\",\n            \"category_name\": \"test\",\n            \"type_name\": \"test\",\n            \"status\": \"Active\",\n            \"created_by\": \"Super Admin\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"new Product\",\n            \"description\": null,\n            \"class_name\": \"test\",\n            \"category_name\": \"test\",\n            \"type_name\": \"test\",\n            \"status\": \"Active\",\n            \"created_by\": \"Super Admin\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://willgo.test/admin/products?page=1\",\n        \"last\": \"http://willgo.test/admin/products?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/products?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://willgo.test/admin/products\",\n        \"per_page\": 10,\n        \"to\": 9,\n        \"total\": 9\n    },\n    \"status\": 200,\n    \"message\": \"api.success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/products/1",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/products/1",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"products",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Feb 2025 21:39:08 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"new Product\",\n        \"description\": null,\n        \"class_name\": \"test\",\n        \"category_name\": \"test\",\n        \"type_name\": \"test\",\n        \"status\": \"Active\",\n        \"created_by\": \"Super Admin\"\n    },\n    \"status\": 200,\n    \"message\": \"api.success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "new Product",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "class_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/OTHERS/3.Apps/Customization/WALLPAPERS/New folder/month_night_mountains_180991_1920x1200.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/products",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "update",
+									"type": "text"
+								},
+								{
+									"key": "class_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "type_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "",
+									"description": "nullable in update",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/products/1",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/products/1/update-status?status=0",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"products",
+								"1",
+								"update-status"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "0",
+									"description": "INACTIVE = 0, ACTIVE = 1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Classes",
+			"item": [
+				{
+					"name": "Categories",
+					"item": [
+						{
+							"name": "Types",
+							"item": [
+								{
+									"name": "List Types",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{site_url}}/admin/categories/types?search=cupiditate",
+											"host": [
+												"{{site_url}}"
+											],
+											"path": [
+												"admin",
+												"categories",
+												"types"
+											],
+											"query": [
+												{
+													"key": "search",
+													"value": "cupiditate"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "List Categories",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/categories/categories",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"categories",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "officiis",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "List Classes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/categories/classes?search=عربي",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"categories",
+								"classes"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "عربي"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Classes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "lang",
+										"value": "ar",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/classes",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"classes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Jan 2025 21:30:11 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"ut\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"saepe\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 3,\n            \"name\": \"illo\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"incidunt\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"cumque\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"qui\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 7,\n            \"name\": \"unde\",\n            \"status\": \"Inactive\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 8,\n            \"name\": \"quae\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 9,\n            \"name\": \"suscipit\",\n            \"status\": \"Inactive\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 10,\n            \"name\": \"ut\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 11,\n            \"name\": \"at\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 12,\n            \"name\": \"sint\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 13,\n            \"name\": \"ut\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 14,\n            \"name\": \"voluptas\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 15,\n            \"name\": \"quo\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 16,\n            \"name\": \"et\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 17,\n            \"name\": \"distinctio\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 18,\n            \"name\": \"magni\",\n            \"status\": \"Inactive\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 19,\n            \"name\": \"iusto\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 20,\n            \"name\": \"voluptatem\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 21,\n            \"name\": \"praesentium\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 22,\n            \"name\": \"facere\",\n            \"status\": \"Inactive\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 23,\n            \"name\": \"reprehenderit\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 24,\n            \"name\": \"deserunt\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 25,\n            \"name\": \"ut\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 26,\n            \"name\": \"distinctio\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 27,\n            \"name\": \"quaerat\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 28,\n            \"name\": \"totam\",\n            \"status\": \"Inactive\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 29,\n            \"name\": \"pariatur\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 30,\n            \"name\": \"mollitia\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 31,\n            \"name\": \"earum\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 32,\n            \"name\": \"vero\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 33,\n            \"name\": \"enim\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 34,\n            \"name\": \"qui\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 35,\n            \"name\": \"quidem\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 36,\n            \"name\": \"et\",\n            \"status\": \"Inactive\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 37,\n            \"name\": \"recusandae\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 38,\n            \"name\": \"similique\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 39,\n            \"name\": \"enim\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 40,\n            \"name\": \"natus\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 41,\n            \"name\": \"facere\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 42,\n            \"name\": \"quia\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 43,\n            \"name\": \"quam\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 44,\n            \"name\": \"culpa\",\n            \"status\": \"Inactive\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 45,\n            \"name\": \"sunt\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 46,\n            \"name\": \"aliquam\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 47,\n            \"name\": \"eum\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 48,\n            \"name\": \"ad\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 49,\n            \"name\": \"velit\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 50,\n            \"name\": \"eos\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 51,\n            \"name\": \"voluptatibus\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 52,\n            \"name\": \"assumenda\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 53,\n            \"name\": \"cupiditate\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 54,\n            \"name\": \"accusamus\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 55,\n            \"name\": \"blanditiis\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 56,\n            \"name\": \"deserunt\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 57,\n            \"name\": \"suscipit\",\n            \"status\": \"Inactive\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 58,\n            \"name\": \"et\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 59,\n            \"name\": \"ut\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 60,\n            \"name\": \"dolore\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 61,\n            \"name\": \"cum\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 62,\n            \"name\": \"repellat\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 63,\n            \"name\": \"omnis\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 64,\n            \"name\": \"ullam\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 65,\n            \"name\": \"magnam\",\n            \"status\": \"Inactive\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 66,\n            \"name\": \"magnam\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 67,\n            \"name\": \"deleniti\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 68,\n            \"name\": \"officiis\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 69,\n            \"name\": \"labore\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 70,\n            \"name\": \"iste\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 71,\n            \"name\": \"voluptatem\",\n            \"status\": \"Inactive\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 72,\n            \"name\": \"vitae\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 73,\n            \"name\": \"laudantium\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 74,\n            \"name\": \"modi\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 75,\n            \"name\": \"recusandae\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 76,\n            \"name\": \"magnam\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 77,\n            \"name\": \"est\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 78,\n            \"name\": \"velit\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 79,\n            \"name\": \"animi\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 80,\n            \"name\": \"eveniet\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 81,\n            \"name\": \"hic\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 82,\n            \"name\": \"deleniti\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 83,\n            \"name\": \"odio\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 84,\n            \"name\": \"velit\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 85,\n            \"name\": \"et\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 86,\n            \"name\": \"velit\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 87,\n            \"name\": \"consequatur\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 88,\n            \"name\": \"rerum\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 89,\n            \"name\": \"aut\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 90,\n            \"name\": \"facilis\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 91,\n            \"name\": \"odit\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 92,\n            \"name\": \"consequatur\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 93,\n            \"name\": \"ea\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 94,\n            \"name\": \"veniam\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 95,\n            \"name\": \"eaque\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 96,\n            \"name\": \"sit\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 97,\n            \"name\": \"accusantium\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 98,\n            \"name\": \"eligendi\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 99,\n            \"name\": \"ratione\",\n            \"status\": \"Active\",\n            \"parent_id\": null\n        },\n        {\n            \"id\": 100,\n            \"name\": \"nisi\",\n            \"status\": \"Inactive\",\n            \"parent_id\": null\n        }\n    ],\n    \"status\": 200,\n    \"message\": \"api.success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "تست55",
+									"description": "Required",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"description": "Required => 0 Inactive , 1 => active",
+									"type": "text"
+								},
+								{
+									"key": "parent_id",
+									"value": "4",
+									"description": "Optional ",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/OTHERS/3.Apps/Customization/WALLPAPERS/New folder/month_night_mountains_180991_1920x1200.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/categories",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name[ar]",
+											"value": "تست",
+											"description": "Required",
+											"type": "text"
+										},
+										{
+											"key": "name[en]",
+											"value": "test",
+											"description": "Required",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "1",
+											"description": "Required => 0 Inactive , 1 => active",
+											"type": "text"
+										},
+										{
+											"key": "parent_id",
+											"value": "",
+											"description": "Optional ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}/admin/categories",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 00:00:01 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"admin.category_created\",\n    \"data\": {\n        \"id\": 302,\n        \"name\": \"test\",\n        \"status\": \"Active\",\n        \"parent_id\": null\n    }\n}"
+						},
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name[ar]",
+											"value": "تست55",
+											"description": "Required",
+											"type": "text"
+										},
+										{
+											"key": "name[en]",
+											"value": "test",
+											"description": "Required",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "1",
+											"description": "Required => 0 Inactive , 1 => active",
+											"type": "text"
+										},
+										{
+											"key": "parent_id",
+											"value": "2",
+											"description": "Optional ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}/admin/categories",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Feb 2025 21:22:37 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "55"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"admin.category_created\",\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"test\",\n        \"status\": \"Active\",\n        \"parent_id\": \"2\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/categories/3",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"categories",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/categories/3",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"categories",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 20:41:25 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"name\": {\n            \"ar\": \"تست55\",\n            \"en\": \"test\"\n        },\n        \"status\": \"Active\",\n        \"parent_id\": null,\n        \"image\": \"https://willgo.test/media/2/month_night_mountains_180991_1920x1200.jpg\"\n    },\n    \"status\": 200,\n    \"message\": \"api.success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "updated1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/admin/categories/:category",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"admin",
+								"categories",
+								":category"
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name[ar]",
+											"value": "تحديث",
+											"type": "text"
+										},
+										{
+											"key": "name[en]",
+											"value": "updated",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}/admin/categories/201",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"categories",
+										"201"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Feb 2025 00:07:42 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"admin.category_updated\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/admin/categories/:id",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"admin",
+								"categories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/categories/6",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"categories",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Jan 2025 23:55:15 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"admin.category_deleted\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "0",
+									"description": "INACTIVE = 0 , ACTIVE = 1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/categories/1/update-status",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"categories",
+								"1",
+								"update-status"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{auth_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Regions",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/regions?search=new Rsegion 4a1as",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"regions"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "new Rsegion 4a1as"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}admin/regions",
+									"host": [
+										"{{site_url}}admin"
+									],
+									"path": [
+										"regions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 21:40:56 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"new Region 3\",\n            \"cities\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Bombuflat\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Garacharma\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Port Blair\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"new Region 2\",\n            \"cities\": []\n        },\n        {\n            \"id\": 1,\n            \"name\": \"new Region\",\n            \"cities\": []\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://willgo.test/admin/regions?page=1\",\n        \"last\": \"http://willgo.test/admin/regions?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/regions?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://willgo.test/admin/regions\",\n        \"per_page\": 10,\n        \"to\": 3,\n        \"total\": 3\n    },\n    \"status\": 200,\n    \"message\": \"api.success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "new Rsegion 4a1as",
+									"type": "text"
+								},
+								{
+									"key": "states[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "states[1]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "states[2]",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/regions",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"regions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "new Region 2",
+											"type": "text"
+										},
+										{
+											"key": "cities[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "cities[1]",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "cities[2]",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}admin/regions",
+									"host": [
+										"{{site_url}}admin"
+									],
+									"path": [
+										"regions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 21:34:47 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Region created successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "updated Region",
+									"type": "text"
+								},
+								{
+									"key": "states[0]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "states[1]",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/regions/1",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"regions",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "updated Region",
+											"type": "text"
+										},
+										{
+											"key": "cities[0]",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "cities[1]",
+											"value": "5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}/admin/regions/1",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"regions",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 21:56:06 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/8.2.21"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "x-ratelimit-limit",
+									"value": "60"
+								},
+								{
+									"key": "x-ratelimit-remaining",
+									"value": "59"
+								},
+								{
+									"key": "content-encoding",
+									"value": "br"
+								},
+								{
+									"key": "platform",
+									"value": "hostinger"
+								},
+								{
+									"key": "panel",
+									"value": "hpanel"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "upgrade-insecure-requests"
+								},
+								{
+									"key": "Server",
+									"value": "hcdn"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								},
+								{
+									"key": "x-hcdn-request-id",
+									"value": "b41cf138f7fe67bd3cf7193004d93a99-srv-edge3"
+								},
+								{
+									"key": "x-hcdn-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "x-hcdn-upstream-rt",
+									"value": "0.070"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Region updated successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}admin/regions/2",
+							"host": [
+								"{{site_url}}admin"
+							],
+							"path": [
+								"regions",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}admin/regions/3",
+									"host": [
+										"{{site_url}}admin"
+									],
+									"path": [
+										"regions",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 21:43:23 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "55"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Region deleted successfully.\"\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{auth_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "City",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/cities?page=false&limit=false",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"cities"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "false"
+								},
+								{
+									"key": "limit",
+									"value": "false"
+								},
+								{
+									"key": "state",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/cities",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"cities"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 19:59:38 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 48331,\n                \"name\": \"Summersville\",\n                \"state_id\": 3976\n            },\n            {\n                \"id\": 48330,\n                \"name\": \"Ravenswood\",\n                \"state_id\": 3976\n            },\n            {\n                \"id\": 48329,\n                \"name\": \"Lewisburg\",\n                \"state_id\": 3976\n            },\n            {\n                \"id\": 48328,\n                \"name\": \"Weston\",\n                \"state_id\": 3976\n            },\n            {\n                \"id\": 48327,\n                \"name\": \"Westover\",\n                \"state_id\": 3976\n            },\n            {\n                \"id\": 48326,\n                \"name\": \"Point Pleasant\",\n                \"state_id\": 3976\n            },\n            {\n                \"id\": 48325,\n                \"name\": \"Ranson\",\n                \"state_id\": 3976\n            },\n            {\n                \"id\": 48324,\n                \"name\": \"Grafton\",\n                \"state_id\": 3976\n            },\n            {\n                \"id\": 48323,\n                \"name\": \"New Martinsville\",\n                \"state_id\": 3976\n            },\n            {\n                \"id\": 48322,\n                \"name\": \"Keyser\",\n                \"state_id\": 3976\n            }\n        ],\n        \"first_page_url\": \"http://willgo.test/admin/cities?page=1\",\n        \"from\": 1,\n        \"last_page\": 4834,\n        \"last_page_url\": \"http://willgo.test/admin/cities?page=4834\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/cities?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://willgo.test/admin/cities?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/cities?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/cities?page=4\",\n                \"label\": \"4\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/cities?page=5\",\n                \"label\": \"5\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/cities?page=6\",\n                \"label\": \"6\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/cities?page=7\",\n                \"label\": \"7\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/cities?page=8\",\n                \"label\": \"8\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/cities?page=9\",\n                \"label\": \"9\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/cities?page=10\",\n                \"label\": \"10\",\n                \"active\": false\n            },\n            {\n                \"url\": null,\n                \"label\": \"...\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/cities?page=4833\",\n                \"label\": \"4833\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/cities?page=4834\",\n                \"label\": \"4834\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/cities?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://willgo.test/admin/cities?page=2\",\n        \"path\": \"http://willgo.test/admin/cities\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10,\n        \"total\": 48331\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "State",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/states?page=false&limit=false",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"states"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "false"
+								},
+								{
+									"key": "limit",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/states",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"states"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 19:58:20 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 4121,\n                \"name\": \"Midlands\",\n                \"country_id\": 246\n            },\n            {\n                \"id\": 4120,\n                \"name\": \"Matabeleland South\",\n                \"country_id\": 246\n            },\n            {\n                \"id\": 4119,\n                \"name\": \"Matabeleland North\",\n                \"country_id\": 246\n            },\n            {\n                \"id\": 4118,\n                \"name\": \"Masvingo\",\n                \"country_id\": 246\n            },\n            {\n                \"id\": 4117,\n                \"name\": \"Mashonaland West\",\n                \"country_id\": 246\n            },\n            {\n                \"id\": 4116,\n                \"name\": \"Mashonaland East\",\n                \"country_id\": 246\n            },\n            {\n                \"id\": 4115,\n                \"name\": \"Mashonaland Central\",\n                \"country_id\": 246\n            },\n            {\n                \"id\": 4114,\n                \"name\": \"Manicaland\",\n                \"country_id\": 246\n            },\n            {\n                \"id\": 4113,\n                \"name\": \"Harare\",\n                \"country_id\": 246\n            },\n            {\n                \"id\": 4112,\n                \"name\": \"Bulawayo\",\n                \"country_id\": 246\n            }\n        ],\n        \"first_page_url\": \"http://willgo.test/admin/states?page=1\",\n        \"from\": 1,\n        \"last_page\": 413,\n        \"last_page_url\": \"http://willgo.test/admin/states?page=413\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/states?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://willgo.test/admin/states?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/states?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/states?page=4\",\n                \"label\": \"4\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/states?page=5\",\n                \"label\": \"5\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/states?page=6\",\n                \"label\": \"6\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/states?page=7\",\n                \"label\": \"7\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/states?page=8\",\n                \"label\": \"8\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/states?page=9\",\n                \"label\": \"9\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/states?page=10\",\n                \"label\": \"10\",\n                \"active\": false\n            },\n            {\n                \"url\": null,\n                \"label\": \"...\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/states?page=412\",\n                \"label\": \"412\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/states?page=413\",\n                \"label\": \"413\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/states?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://willgo.test/admin/states?page=2\",\n        \"path\": \"http://willgo.test/admin/states\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10,\n        \"total\": 4121\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/companies",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"companies"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "ABC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/admin/companies/:id",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"admin",
+								"companies",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "new Rsegion 4a1as",
+									"type": "text"
+								},
+								{
+									"key": "owner_name",
+									"value": "new Rsegion 4a1as",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "yasser.m22291@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+20123456789",
+									"description": "sometimes",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/admin/companies",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"admin",
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "new Rsegion 4a1as",
+									"type": "text"
+								},
+								{
+									"key": "owner_name",
+									"value": "new Rsegion 4a1as",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "yasser.m22291@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+20123456789",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "1",
+									"description": " case BOTH = 0;\n    case Retailer = 1;\n    case Wholesaler = 2;",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"description": "    case INACTIVE = 0;\n    case ACTIVE = 1;\n    case INVITED = 2;",
+									"type": "text"
+								},
+								{
+									"key": "business_registration_number",
+									"value": "5616",
+									"type": "text"
+								},
+								{
+									"key": "tax_number",
+									"value": "5616",
+									"type": "text"
+								},
+								{
+									"key": "country_id",
+									"value": "",
+									"description": "country id",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "state_id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "city_id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "region_id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "address",
+									"value": "address",
+									"type": "text"
+								},
+								{
+									"key": "iban",
+									"value": "213213",
+									"type": "text"
+								},
+								{
+									"key": "available_payment_methods[0]",
+									"value": "Cash",
+									"description": "Cash, Bank",
+									"type": "text"
+								},
+								{
+									"key": "available_payment_methods[1]",
+									"value": "Bank",
+									"description": "Cash, Bank",
+									"type": "text"
+								},
+								{
+									"key": "retailer_min_order_price",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "retailer_min_number_product",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "retailer_delivery",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "retailer_delivery_start_time",
+									"value": "18:43",
+									"type": "text"
+								},
+								{
+									"key": "retailer_delivery_end_time",
+									"value": "19:43",
+									"type": "text"
+								},
+								{
+									"key": "retailer_days_Off[0]",
+									"value": "Sunday",
+									"type": "text"
+								},
+								{
+									"key": "retailer_days_Off[1]",
+									"value": "Wednesday",
+									"type": "text"
+								},
+								{
+									"key": "wholesaler_min_order_price",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "wholesaler_min_number_product",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "wholesaler_delivery",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "wholesaler_delivery_start_time",
+									"value": "18:43",
+									"type": "text"
+								},
+								{
+									"key": "wholesaler_delivery_end_time",
+									"value": "19:43",
+									"type": "text"
+								},
+								{
+									"key": "wholesaler_days_Off[0]",
+									"value": "Sunday",
+									"type": "text"
+								},
+								{
+									"key": "wholesaler_days_Off[1]",
+									"value": "Wednesday",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/admin/companies/:company",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"admin",
+								"companies",
+								":company"
+							],
+							"variable": [
+								{
+									"key": "company",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}admin/companies/:company",
+							"host": [
+								"{{site_url}}admin"
+							],
+							"path": [
+								"companies",
+								":company"
+							],
+							"variable": [
+								{
+									"key": "company",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{auth_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "vendors",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/vendors",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"vendors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}/admin/vendors/:id",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"admin",
+								"vendors",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "new Rsegion 4a1as",
+									"type": "text"
+								},
+								{
+									"key": "owner_name",
+									"value": "new Rsegion 4a1as",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "yasser.m22291@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+20123456789",
+									"description": "sometimes",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/admin/vendors",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"admin",
+								"vendors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "new Rsegion 4a1as",
+									"type": "text"
+								},
+								{
+									"key": "owner_name",
+									"value": "new Rsegion 4a1as",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "yasser.m22291@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+20123456789",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"description": "    case INACTIVE = 0;\n    case ACTIVE = 1;\n    case INVITED = 2;",
+									"type": "text"
+								},
+								{
+									"key": "business_registration_number",
+									"value": "5616",
+									"type": "text"
+								},
+								{
+									"key": "tax_number",
+									"value": "5616",
+									"type": "text"
+								},
+								{
+									"key": "country_id",
+									"value": "",
+									"description": "country id",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "state_id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "city_id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "region_id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "address",
+									"value": "address",
+									"type": "text"
+								},
+								{
+									"key": "iban",
+									"value": "213213",
+									"type": "text"
+								},
+								{
+									"key": "available_payment_methods[0]",
+									"value": "Cash",
+									"description": "Cash, Bank",
+									"type": "text"
+								},
+								{
+									"key": "available_payment_methods[1]",
+									"value": "Bank",
+									"description": "Cash, Bank",
+									"type": "text"
+								},
+								{
+									"key": "retailer_min_order_price",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "retailer_min_number_product",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "retailer_delivery",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "retailer_delivery_start_time",
+									"value": "18:43",
+									"type": "text"
+								},
+								{
+									"key": "retailer_delivery_end_time",
+									"value": "19:43",
+									"type": "text"
+								},
+								{
+									"key": "retailer_days_Off[0]",
+									"value": "Sunday",
+									"type": "text"
+								},
+								{
+									"key": "retailer_days_Off[1]",
+									"value": "Wednesday",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}/admin/vendors/:vendor",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"admin",
+								"vendors",
+								":vendor"
+							],
+							"variable": [
+								{
+									"key": "vendor",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}admin/vendors/:vendor",
+							"host": [
+								"{{site_url}}admin"
+							],
+							"path": [
+								"vendors",
+								":vendor"
+							],
+							"variable": [
+								{
+									"key": "vendor",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{auth_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "site_url",
+			"value": "https://gomlaback.rowadtech.com",
+			"type": "default"
+		}
+	]
+}

@@ -1,0 +1,2065 @@
+{
+	"info": {
+		"_postman_id": "44016209-b13e-4570-9a67-2194c10c9397",
+		"name": "App - Retailer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41749141",
+		"_collection_link": "https://crimson-space-606996.postman.co/workspace/Tajzea~4e2ee84f-5d29-49e5-8fe9-42b128cd3518/collection/41749141-44016209-b13e-4570-9a67-2194c10c9397?action=share&source=collection_link&creator=41749141"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "step",
+									"value": "3",
+									"description": "INITIAL = 0 , BUSINESS_TYPE = 1, LOCATION = 2, DETAILS = 3",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+201007642441",
+									"description": "ALL            Required",
+									"type": "text"
+								},
+								{
+									"key": "business_type",
+									"value": "1",
+									"description": "STEP : 1  - Required        0  => RETAILER, 1=> WHOLESALER",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+									"description": "STEP : 2  - Required",
+									"type": "text"
+								},
+								{
+									"key": "country_id",
+									"value": "64",
+									"description": "STEP : 2  - Required",
+									"type": "text"
+								},
+								{
+									"key": "state_id",
+									"value": "1",
+									"description": "STEP : 2  - Required",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "1",
+									"description": "STEP : 2  - Required",
+									"type": "text"
+								},
+								{
+									"key": "street_name",
+									"value": "Lorem ipsum",
+									"description": "STEP : 2",
+									"type": "text"
+								},
+								{
+									"key": "facility_number",
+									"value": "4521",
+									"description": "STEP : 2  - Required",
+									"type": "text"
+								},
+								{
+									"key": "distinctive_mark",
+									"value": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+									"description": "STEP : 2",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "",
+									"description": "STEP : 2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "long",
+									"value": "",
+									"description": "STEP : 2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "1",
+									"description": "STEP : 2  - Required",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Tajzea",
+									"description": "STEP : 3",
+									"type": "text"
+								},
+								{
+									"key": "owner_name",
+									"value": "Ahmed Eid",
+									"description": "STEP : 3  - Required",
+									"type": "text"
+								},
+								{
+									"key": "additional_phone",
+									"value": "",
+									"description": "STEP : 3",
+									"type": "text"
+								},
+								{
+									"key": "vat_number",
+									"value": "123456789323757",
+									"description": "STEP : 3  - Required",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "STEP : 3",
+									"type": "file",
+									"src": "/D:/OTHERS/3.Apps/Customization/WALLPAPERS/New folder/astronaut_neon_art_148365_1920x1080.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{mbile_retailer_url}}/register",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Phone",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "+201007642441",
+									"type": "text"
+								},
+								{
+									"key": "otp",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{mbile_retailer_url}}/verify-phone",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"verify-phone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "+201007642441",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{mbile_retailer_url}}/login",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify  Login OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "+201007642441",
+									"type": "text"
+								},
+								{
+									"key": "otp",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{mbile_retailer_url}}/verify-otp",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"verify-otp"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Verify  Login OTP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "+201234567893",
+											"type": "text"
+										},
+										{
+											"key": "otp",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{mbile_retailer_url}}/verify-otp",
+									"host": [
+										"{{mbile_retailer_url}}"
+									],
+									"path": [
+										"verify-otp"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 19:42:07 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "Authorization, Content-Length, X-Auth-Token"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Login successfully\",\n    \"data\": {\n        \"user\": {\n            \"id\": 10,\n            \"name\": \"Tajzea\",\n            \"address\": {\n                \"address\": \"Lorem ipsum dolor sit amet consectetur adipisicing elit.\",\n                \"country\": \"Egypt\",\n                \"state\": \"Andaman and Nicobar Islands\",\n                \"city\": \"Bombuflat\",\n                \"region\": \"Default For Now\",\n                \"street_name\": \"Lorem ipsum\",\n                \"facility_number\": \"4521\",\n                \"lat\": null,\n                \"lng\": null,\n                \"distinctive_mark\": \"Lorem ipsum dolor sit amet consectetur adipisicing elit.\"\n            },\n            \"owner_name\": \"Ahmed Eid\",\n            \"phone\": \"+201234567893\",\n            \"additional_phone\": null,\n            \"type\": \"retailer.type.DairyShop\",\n            \"vat_number\": \"123456789123457\",\n            \"status\": \"api.inactive\"\n        },\n        \"token\": \"12|0iiSIxaIpGpR4BZlta52Mo7BuF7lUtJGTxi4A2MEf1d8cddb\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Forget Password",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "+201007642441",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{mbile_retailer_url}}/resend-otp",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"resend-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{mbile_retailer_url}}/logout",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Location",
+			"item": [
+				{
+					"name": "Get Countries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{mbile_retailer_url}}/countries",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"countries"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Countries",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{mbile_retailer_url}}/countries",
+									"host": [
+										"{{mbile_retailer_url}}"
+									],
+									"path": [
+										"countries"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Jan 2025 07:47:54 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 246,\n                \"code\": \"ZW\",\n                \"name\": \"Zimbabwe\",\n                \"phonecode\": 263\n            },\n            {\n                \"id\": 245,\n                \"code\": \"ZM\",\n                \"name\": \"Zambia\",\n                \"phonecode\": 260\n            },\n            {\n                \"id\": 244,\n                \"code\": \"YU\",\n                \"name\": \"Yugoslavia\",\n                \"phonecode\": 38\n            },\n            {\n                \"id\": 243,\n                \"code\": \"YE\",\n                \"name\": \"Yemen\",\n                \"phonecode\": 967\n            },\n            {\n                \"id\": 242,\n                \"code\": \"EH\",\n                \"name\": \"Western Sahara\",\n                \"phonecode\": 212\n            },\n            {\n                \"id\": 241,\n                \"code\": \"WF\",\n                \"name\": \"Wallis And Futuna Islands\",\n                \"phonecode\": 681\n            },\n            {\n                \"id\": 240,\n                \"code\": \"VI\",\n                \"name\": \"Virgin Islands (US)\",\n                \"phonecode\": 1340\n            },\n            {\n                \"id\": 239,\n                \"code\": \"VG\",\n                \"name\": \"Virgin Islands (British)\",\n                \"phonecode\": 1284\n            },\n            {\n                \"id\": 238,\n                \"code\": \"VN\",\n                \"name\": \"Vietnam\",\n                \"phonecode\": 84\n            },\n            {\n                \"id\": 237,\n                \"code\": \"VE\",\n                \"name\": \"Venezuela\",\n                \"phonecode\": 58\n            }\n        ],\n        \"first_page_url\": \"http://willgo.test/api/v1/retailer/countries?page=1\",\n        \"from\": 1,\n        \"last_page\": 25,\n        \"last_page_url\": \"http://willgo.test/api/v1/retailer/countries?page=25\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/countries?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/countries?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/countries?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/countries?page=4\",\n                \"label\": \"4\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/countries?page=5\",\n                \"label\": \"5\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/countries?page=6\",\n                \"label\": \"6\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/countries?page=7\",\n                \"label\": \"7\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/countries?page=8\",\n                \"label\": \"8\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/countries?page=9\",\n                \"label\": \"9\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/countries?page=10\",\n                \"label\": \"10\",\n                \"active\": false\n            },\n            {\n                \"url\": null,\n                \"label\": \"...\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/countries?page=24\",\n                \"label\": \"24\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/countries?page=25\",\n                \"label\": \"25\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/countries?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://willgo.test/api/v1/retailer/countries?page=2\",\n        \"path\": \"http://willgo.test/api/v1/retailer/countries\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10,\n        \"total\": 246\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get States",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{mbile_retailer_url}}/states",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"states"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "64",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get States",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{mbile_retailer_url}}/states?page=2&country=64",
+									"host": [
+										"{{mbile_retailer_url}}"
+									],
+									"path": [
+										"states"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "country",
+											"value": "64"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Jan 2025 07:47:33 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"current_page\": 2,\n        \"data\": [\n            {\n                \"id\": 1066,\n                \"name\": \"al-Iskandariyah\",\n                \"country_id\": 64\n            },\n            {\n                \"id\": 1065,\n                \"name\": \"al-Gharbiyah\",\n                \"country_id\": 64\n            },\n            {\n                \"id\": 1064,\n                \"name\": \"al-Fayyum\",\n                \"country_id\": 64\n            },\n            {\n                \"id\": 1063,\n                \"name\": \"al-Buhayrah\",\n                \"country_id\": 64\n            },\n            {\n                \"id\": 1062,\n                \"name\": \"al-Bahr-al-Ahmar\",\n                \"country_id\": 64\n            },\n            {\n                \"id\": 1061,\n                \"name\": \"ad-Daqahliyah\",\n                \"country_id\": 64\n            },\n            {\n                \"id\": 1060,\n                \"name\": \"Sina ash-Shamaliyah\",\n                \"country_id\": 64\n            },\n            {\n                \"id\": 1059,\n                \"name\": \"Sina al-Janubiyah\",\n                \"country_id\": 64\n            },\n            {\n                \"id\": 1058,\n                \"name\": \"Sawhaj\",\n                \"country_id\": 64\n            },\n            {\n                \"id\": 1057,\n                \"name\": \"Qina\",\n                \"country_id\": 64\n            }\n        ],\n        \"first_page_url\": \"http://willgo.test/api/v1/retailer/states?page=1\",\n        \"from\": 11,\n        \"last_page\": 4,\n        \"last_page_url\": \"http://willgo.test/api/v1/retailer/states?page=4\",\n        \"links\": [\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/states?page=1\",\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/states?page=1\",\n                \"label\": \"1\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/states?page=2\",\n                \"label\": \"2\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/states?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/states?page=4\",\n                \"label\": \"4\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/states?page=3\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://willgo.test/api/v1/retailer/states?page=3\",\n        \"path\": \"http://willgo.test/api/v1/retailer/states\",\n        \"per_page\": 10,\n        \"prev_page_url\": \"http://willgo.test/api/v1/retailer/states?page=1\",\n        \"to\": 20,\n        \"total\": 33\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Cities",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{mbile_retailer_url}}/cities?page=3&state=1076",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"cities"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "3"
+								},
+								{
+									"key": "state",
+									"value": "1076"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Cities",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{mbile_retailer_url}}/cities?page=2&state=1061",
+									"host": [
+										"{{mbile_retailer_url}}"
+									],
+									"path": [
+										"cities"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "state",
+											"value": "1061"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Jan 2025 07:50:03 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"current_page\": 2,\n        \"data\": [\n            {\n                \"id\": 15484,\n                \"name\": \"Dikirnis\",\n                \"state_id\": 1061\n            },\n            {\n                \"id\": 15483,\n                \"name\": \"Bilqas\",\n                \"state_id\": 1061\n            },\n            {\n                \"id\": 15482,\n                \"name\": \"Bahut\",\n                \"state_id\": 1061\n            },\n            {\n                \"id\": 15481,\n                \"name\": \"Aja\",\n                \"state_id\": 1061\n            }\n        ],\n        \"first_page_url\": \"http://willgo.test/api/v1/retailer/cities?page=1\",\n        \"from\": 11,\n        \"last_page\": 2,\n        \"last_page_url\": \"http://willgo.test/api/v1/retailer/cities?page=2\",\n        \"links\": [\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/cities?page=1\",\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/cities?page=1\",\n                \"label\": \"1\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/cities?page=2\",\n                \"label\": \"2\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://willgo.test/api/v1/retailer/cities\",\n        \"per_page\": 10,\n        \"prev_page_url\": \"http://willgo.test/api/v1/retailer/cities?page=1\",\n        \"to\": 14,\n        \"total\": 14\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Get Categories",
+			"item": [
+				{
+					"name": "Get Classes - LVL 1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{mbile_retailer_url}}/categories/classes",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"categories",
+								"classes"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "accusantium",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"description": "Used For:  limit number of items for each page\nDefault: 10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{mbile_retailer_url}}/categories/classes",
+									"host": [
+										"{{mbile_retailer_url}}"
+									],
+									"path": [
+										"categories",
+										"classes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 20:12:03 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": {\n                \"ar\": \"تست55\",\n                \"en\": \"test\"\n            },\n            \"status\": \"Active\",\n            \"parent_id\": null,\n            \"parent\": null\n        }\n    ],\n    \"status\": 200,\n    \"message\": \"api.success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Categories - LVL 2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "lang",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{mbile_retailer_url}}/categories/categories",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"categories",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "getByMainCategory",
+									"value": "86",
+									"description": "used for any catgory level to filter by the higher level ",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "vo",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Types - LVL 3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{mbile_retailer_url}}/categories/types",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"categories",
+								"types"
+							],
+							"query": [
+								{
+									"key": "getByMainCategory",
+									"value": "187",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "praesentium",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{mbile_retailer_url}}/products",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Product 975",
+									"description": "name",
+									"disabled": true
+								},
+								{
+									"key": "class",
+									"value": "2",
+									"description": "id",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "3",
+									"description": "id",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "1",
+									"description": "id",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{mbile_retailer_url}}/products",
+									"host": [
+										"{{mbile_retailer_url}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "Product 975",
+											"description": "name",
+											"disabled": true
+										},
+										{
+											"key": "class",
+											"value": "2",
+											"description": "id",
+											"disabled": true
+										},
+										{
+											"key": "category",
+											"value": "3",
+											"description": "id",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "1",
+											"description": "id",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 12 Feb 2025 18:30:43 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1001,\n            \"name\": \"new Product\",\n            \"description\": null,\n            \"status\": \"Active\",\n            \"class_name\": \"quis\",\n            \"category_name\": \"quis\",\n            \"type_name\": \"quis\",\n            \"created_by\": \"Super Admin\",\n            \"photo\": \"https://willgo.test/storage/5/month_night_mountains_180991_1920x1200.jpg\"\n        },\n        {\n            \"id\": 1000,\n            \"name\": \"Sample Product 1000\",\n            \"description\": \"This is a sample product.\",\n            \"status\": \"Active\",\n            \"class_name\": \"ducimus\",\n            \"category_name\": \"aut\",\n            \"type_name\": \"dolor\",\n            \"created_by\": \"Super Admin\",\n            \"photo\": \"\"\n        },\n        {\n            \"id\": 998,\n            \"name\": \"Sample Product 998\",\n            \"description\": \"This is a sample product.\",\n            \"status\": \"Active\",\n            \"class_name\": \"vero\",\n            \"category_name\": \"sunt\",\n            \"type_name\": \"aliquam\",\n            \"created_by\": \"Super Admin\",\n            \"photo\": \"\"\n        },\n        {\n            \"id\": 996,\n            \"name\": \"Sample Product 996\",\n            \"description\": \"This is a sample product.\",\n            \"status\": \"Active\",\n            \"class_name\": \"fuga\",\n            \"category_name\": \"id\",\n            \"type_name\": \"est\",\n            \"created_by\": \"Super Admin\",\n            \"photo\": \"\"\n        },\n        {\n            \"id\": 993,\n            \"name\": \"Sample Product 993\",\n            \"description\": \"This is a sample product.\",\n            \"status\": \"Active\",\n            \"class_name\": \"id\",\n            \"category_name\": \"minus\",\n            \"type_name\": \"aut\",\n            \"created_by\": \"Super Admin\",\n            \"photo\": \"\"\n        },\n        {\n            \"id\": 992,\n            \"name\": \"Sample Product 992\",\n            \"description\": \"This is a sample product.\",\n            \"status\": \"Active\",\n            \"class_name\": \"cum\",\n            \"category_name\": \"in\",\n            \"type_name\": \"sapiente\",\n            \"created_by\": \"Super Admin\",\n            \"photo\": \"\"\n        },\n        {\n            \"id\": 990,\n            \"name\": \"Sample Product 990\",\n            \"description\": \"This is a sample product.\",\n            \"status\": \"Active\",\n            \"class_name\": \"vero\",\n            \"category_name\": \"et\",\n            \"type_name\": \"itaque\",\n            \"created_by\": \"Super Admin\",\n            \"photo\": \"\"\n        },\n        {\n            \"id\": 987,\n            \"name\": \"Sample Product 987\",\n            \"description\": \"This is a sample product.\",\n            \"status\": \"Active\",\n            \"class_name\": \"fuga\",\n            \"category_name\": \"aliquam\",\n            \"type_name\": \"alias\",\n            \"created_by\": \"Super Admin\",\n            \"photo\": \"\"\n        },\n        {\n            \"id\": 986,\n            \"name\": \"Sample Product 986\",\n            \"description\": \"This is a sample product.\",\n            \"status\": \"Active\",\n            \"class_name\": \"alias\",\n            \"category_name\": \"vero\",\n            \"type_name\": \"est\",\n            \"created_by\": \"Super Admin\",\n            \"photo\": \"\"\n        },\n        {\n            \"id\": 983,\n            \"name\": \"Sample Product 983\",\n            \"description\": \"This is a sample product.\",\n            \"status\": \"Active\",\n            \"class_name\": \"et\",\n            \"category_name\": \"quia\",\n            \"type_name\": \"alias\",\n            \"created_by\": \"Super Admin\",\n            \"photo\": \"\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://willgo.test/api/v1/retailer/products?page=1\",\n        \"last\": \"http://willgo.test/api/v1/retailer/products?page=52\",\n        \"prev\": null,\n        \"next\": \"http://willgo.test/api/v1/retailer/products?page=2\"\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 52,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/products?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/products?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/products?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/products?page=4\",\n                \"label\": \"4\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/products?page=5\",\n                \"label\": \"5\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/products?page=6\",\n                \"label\": \"6\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/products?page=7\",\n                \"label\": \"7\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/products?page=8\",\n                \"label\": \"8\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/products?page=9\",\n                \"label\": \"9\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/products?page=10\",\n                \"label\": \"10\",\n                \"active\": false\n            },\n            {\n                \"url\": null,\n                \"label\": \"...\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/products?page=51\",\n                \"label\": \"51\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/products?page=52\",\n                \"label\": \"52\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/api/v1/retailer/products?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://willgo.test/api/v1/retailer/products\",\n        \"per_page\": 10,\n        \"to\": 10,\n        \"total\": 513\n    },\n    \"status\": 200,\n    \"message\": \"api.success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{mbile_retailer_url}}/products/1",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{mbile_retailer_url}}/products/1",
+									"host": [
+										"{{mbile_retailer_url}}"
+									],
+									"path": [
+										"products",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 12 Feb 2025 18:28:25 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"product\": {\n            \"id\": 1,\n            \"name\": \"update\",\n            \"description\": \"This is a sample product.\",\n            \"status\": \"Active\",\n            \"class_name\": \"quis\",\n            \"category_name\": \"nulla\",\n            \"type_name\": \"sunt\",\n            \"created_by\": \"Super Admin\",\n            \"photo\": \"\"\n        },\n        \"offers\": [\n            {\n                \"id\": 1001,\n                \"product_name\": \"update\",\n                \"price\": 230,\n                \"min_quantity\": 10,\n                \"max_quantity\": 73,\n                \"stock\": 14,\n                \"vendor\": {\n                    \"id\": 1,\n                    \"name\": \"ABC Corp\",\n                    \"delivery_time\": 3,\n                    \"min_order_price\": 100,\n                    \"photo\": \"\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Vendors",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{mbile_retailer_url}}/vendors",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"vendors"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "ABC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{mbile_retailer_url}}/carts",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"carts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{mbile_retailer_url}}/carts",
+									"host": [
+										"{{mbile_retailer_url}}"
+									],
+									"path": [
+										"carts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Feb 2025 18:55:06 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"ABC Corp\",\n                \"delivery_time\": 5,\n                \"min_order_price\": 500,\n                \"photo\": \"\"\n            },\n            \"items\": [\n                {\n                    \"id\": 4,\n                    \"item_name\": \"Sample Product 2\",\n                    \"price\": 80.07,\n                    \"quantity\": 7,\n                    \"total\": 560.49\n                },\n                {\n                    \"id\": 3,\n                    \"item_name\": \"Sample Product 1\",\n                    \"price\": 78.33,\n                    \"quantity\": 7,\n                    \"total\": 548.31\n                }\n            ],\n            \"total\": 1108.8\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "item_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{mbile_retailer_url}}/carts",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{mbile_retailer_url}}/carts/15",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"carts",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{mbile_retailer_url}}/carts/clear",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"carts",
+								"clear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "quantity",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{mbile_retailer_url}}/carts/1",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"carts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{mbile_retailer_url}}/carts/checkout",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"carts",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Retailer Types",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{mbile_retailer_url}}/retailer-types",
+					"host": [
+						"{{mbile_retailer_url}}"
+					],
+					"path": [
+						"retailer-types"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Retailer Types",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{mbile_retailer_url}}/retailer-types",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"retailer-types"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Feb 2025 17:48:31 GMT"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization, Content-Length, X-Auth-Token"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"value\": 1,\n            \"label\": \"retailer.type.DairyShop\",\n            \"icon\": \"fa-solid fa-bottle-water\"\n        },\n        {\n            \"value\": 2,\n            \"label\": \"retailer.type.Pharmacy\",\n            \"icon\": \"fa-solid fa-prescription-bottle\"\n        },\n        {\n            \"value\": 3,\n            \"label\": \"retailer.type.Warehouse\",\n            \"icon\": \"fa-solid fa-box-open\"\n        },\n        {\n            \"value\": 4,\n            \"label\": \"retailer.type.Supermarket\",\n            \"icon\": \"fa-solid fa-cart-shopping\"\n        },\n        {\n            \"value\": 5,\n            \"label\": \"retailer.type.GroceryStore\",\n            \"icon\": \"fa-solid fa-store\"\n        },\n        {\n            \"value\": 6,\n            \"label\": \"retailer.type.CoffeeShop\",\n            \"icon\": \"fa-solid fa-mug-hot\"\n        },\n        {\n            \"value\": 7,\n            \"label\": \"retailer.type.CleaningStore\",\n            \"icon\": \"fa-solid fa-spray-can\"\n        },\n        {\n            \"value\": 8,\n            \"label\": \"retailer.type.DeliveryDriver\",\n            \"icon\": \"fa-solid fa-truck-fast\"\n        },\n        {\n            \"value\": 9,\n            \"label\": \"retailer.type.Restaurant\",\n            \"icon\": \"fa-solid fa-utensils\"\n        },\n        {\n            \"value\": 10,\n            \"label\": \"retailer.type.Other\",\n            \"icon\": \"fa-solid fa-plus\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Wholesaler Types",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{mbile_retailer_url}}/wholesaler-types",
+					"host": [
+						"{{mbile_retailer_url}}"
+					],
+					"path": [
+						"wholesaler-types"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Wholesaler Types",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{mbile_retailer_url}}/wholesaler-types",
+							"host": [
+								"{{mbile_retailer_url}}"
+							],
+							"path": [
+								"wholesaler-types"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Feb 2025 20:48:07 GMT"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "55"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Authorization, Content-Length, X-Auth-Token"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"value\": 11,\n            \"label\": \"retailer.type.food_wholesaler\",\n            \"icon\": \"fa-solid fa-wheat-awn\"\n        },\n        {\n            \"value\": 12,\n            \"label\": \"retailer.type.beverage_wholesaler\",\n            \"icon\": \"fa-solid fa-bottle-droplet\"\n        },\n        {\n            \"value\": 13,\n            \"label\": \"retailer.type.pharmaceutical_wholesaler\",\n            \"icon\": \"fa-solid fa-pills\"\n        },\n        {\n            \"value\": 14,\n            \"label\": \"retailer.type.electronics_wholesaler\",\n            \"icon\": \"fa-solid fa-microchip\"\n        },\n        {\n            \"value\": 15,\n            \"label\": \"retailer.type.clothing_wholesaler\",\n            \"icon\": \"fa-solid fa-shirt\"\n        },\n        {\n            \"value\": 16,\n            \"label\": \"retailer.type.furniture_wholesaler\",\n            \"icon\": \"fa-solid fa-couch\"\n        },\n        {\n            \"value\": 17,\n            \"label\": \"retailer.type.automotive_wholesaler\",\n            \"icon\": \"fa-solid fa-car\"\n        },\n        {\n            \"value\": 18,\n            \"label\": \"retailer.type.construction_wholesaler\",\n            \"icon\": \"fa-solid fa-hard-hat\"\n        },\n        {\n            \"value\": 19,\n            \"label\": \"retailer.type.agricultural_wholesaler\",\n            \"icon\": \"fa-solid fa-tractor\"\n        },\n        {\n            \"value\": 20,\n            \"label\": \"retailer.type.general_wholesaler\",\n            \"icon\": \"fa-solid fa-boxes-stacked\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
