@@ -2228,7 +2228,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{site_url}}/admin/retailers?status=1",
+							"raw": "{{site_url}}/admin/retailers",
 							"host": [
 								"{{site_url}}"
 							],
@@ -2239,7 +2239,8 @@
 							"query": [
 								{
 									"key": "status",
-									"value": "1"
+									"value": "1",
+									"disabled": true
 								},
 								{
 									"key": "search",
@@ -2332,27 +2333,46 @@
 								},
 								{
 									"key": "address",
-									"value": "",
+									"value": "lorem ",
 									"type": "text"
 								},
 								{
-									"key": "city",
-									"value": "",
+									"key": "country_id",
+									"value": "64",
+									"description": "Required           64 Egypt Id",
 									"type": "text"
 								},
 								{
-									"key": "district",
-									"value": "",
+									"key": "state_id",
+									"value": "1",
+									"description": "Required",
 									"type": "text"
 								},
 								{
-									"key": "region",
-									"value": "",
+									"key": "city_id",
+									"value": "1",
+									"description": "Required",
+									"type": "text"
+								},
+								{
+									"key": "region_id",
+									"value": "1",
 									"type": "text"
 								},
 								{
 									"key": "street_name",
-									"value": "",
+									"value": "lorem",
+									"type": "text"
+								},
+								{
+									"key": "facility_number",
+									"value": "4521",
+									"description": "Required",
+									"type": "text"
+								},
+								{
+									"key": "distinctive_mark",
+									"value": "lorem",
 									"type": "text"
 								},
 								{
@@ -2366,8 +2386,21 @@
 									"type": "text"
 								},
 								{
+									"key": "type",
+									"value": "1",
+									"description": "Required",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Tajzea",
+									"description": "Required",
+									"type": "text"
+								},
+								{
 									"key": "owner_name",
-									"value": "",
+									"value": "Ahmed Eid",
+									"description": "Required",
 									"type": "text"
 								},
 								{
@@ -2376,30 +2409,448 @@
 									"type": "text"
 								},
 								{
-									"key": "type",
+									"key": "status",
 									"value": "",
 									"type": "text"
 								},
 								{
-									"key": "status",
+									"key": "image",
 									"value": "",
+									"description": " not for now we need to discuss about this",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{site_url}}/admin/retailers/12",
+							"raw": "{{site_url}}/admin/retailers/9",
 							"host": [
 								"{{site_url}}"
 							],
 							"path": [
 								"admin",
 								"retailers",
-								"12"
+								"9"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Edit",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "phone",
+											"value": "01007642441",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "ahmed eid",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "lorem ",
+											"type": "text"
+										},
+										{
+											"key": "country_id",
+											"value": "64",
+											"description": "Required           64 Egypt Id",
+											"type": "text"
+										},
+										{
+											"key": "state_id",
+											"value": "1",
+											"description": "Required",
+											"type": "text"
+										},
+										{
+											"key": "city_id",
+											"value": "1",
+											"description": "Required",
+											"type": "text"
+										},
+										{
+											"key": "region_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "street_name",
+											"value": "lorem",
+											"type": "text"
+										},
+										{
+											"key": "facility_number",
+											"value": "4521",
+											"description": "Required",
+											"type": "text"
+										},
+										{
+											"key": "distinctive_mark",
+											"value": "lorem",
+											"type": "text"
+										},
+										{
+											"key": "lat",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "long",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "1",
+											"description": "Required",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Tajzea",
+											"description": "Required",
+											"type": "text"
+										},
+										{
+											"key": "owner_name",
+											"value": "Ahmed Eid",
+											"description": "Required",
+											"type": "text"
+										},
+										{
+											"key": "additional_phone",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "",
+											"description": " not for now we need to discuss about this",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}/admin/retailers/9",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"retailers",
+										"9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 21:16:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "337"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "x-ratelimit-limit",
+									"value": "60"
+								},
+								{
+									"key": "x-ratelimit-remaining",
+									"value": "59"
+								},
+								{
+									"key": "content-encoding",
+									"value": "br"
+								},
+								{
+									"key": "platform",
+									"value": "hostinger"
+								},
+								{
+									"key": "panel",
+									"value": "hpanel"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "upgrade-insecure-requests"
+								},
+								{
+									"key": "Server",
+									"value": "hcdn"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								},
+								{
+									"key": "x-hcdn-request-id",
+									"value": "eea541f97ef7dc9b27f3c85ce9faa299-srv-edge4"
+								},
+								{
+									"key": "x-hcdn-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "x-hcdn-upstream-rt",
+									"value": "0.097"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Updated successfully\",\n    \"data\": {\n        \"id\": 9,\n        \"name\": \"Tajzea\",\n        \"address\": {\n            \"address\": \"lorem\",\n            \"country\": \"Egypt\",\n            \"country_id\": 64,\n            \"state\": \"as-Suways\",\n            \"state_id\": 1075,\n            \"city\": \"as-Suways\",\n            \"city_id\": 15593,\n            \"region\": \"Default For Now\",\n            \"region_id\": null,\n            \"street_name\": \"lorem\",\n            \"facility_number\": \"325\",\n            \"lat\": null,\n            \"lng\": null,\n            \"distinctive_mark\": null\n        },\n        \"owner_name\": \"Ahmed Eid\",\n        \"phone\": \"01007642441\",\n        \"additional_phone\": null,\n        \"type\": \"Dairy Shop\",\n        \"vat_number\": \"558382868286855\",\n        \"status\": 1,\n        \"status_label\": \"active\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "1",
+									"description": "ACTIVE = 1, INACTIVE = 0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/retailers/1/update-status",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"retailers",
+								"1",
+								"update-status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update status",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "0",
+											"description": "ACTIVE = 1, INACTIVE = 0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}/admin/retailers/9/update-status",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"retailers",
+										"9",
+										"update-status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 21:06:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "390"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "x-ratelimit-limit",
+									"value": "60"
+								},
+								{
+									"key": "x-ratelimit-remaining",
+									"value": "56"
+								},
+								{
+									"key": "content-encoding",
+									"value": "br"
+								},
+								{
+									"key": "platform",
+									"value": "hostinger"
+								},
+								{
+									"key": "panel",
+									"value": "hpanel"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "upgrade-insecure-requests"
+								},
+								{
+									"key": "Server",
+									"value": "hcdn"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								},
+								{
+									"key": "x-hcdn-request-id",
+									"value": "5936d482f30ccc24c5248d7714a0755b-srv-edge3"
+								},
+								{
+									"key": "x-hcdn-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "x-hcdn-upstream-rt",
+									"value": "0.076"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Updated successfully\",\n    \"data\": {\n        \"id\": 9,\n        \"name\": \"منشأه\",\n        \"address\": {\n            \"address\": \"ززز\",\n            \"country\": \"Egypt\",\n            \"country_id\": 64,\n            \"state\": \"as-Suways\",\n            \"state_id\": 1075,\n            \"city\": \"as-Suways\",\n            \"city_id\": 15593,\n            \"region\": \"Default For Now\",\n            \"region_id\": null,\n            \"street_name\": \"تتت\",\n            \"facility_number\": \"325\",\n            \"lat\": null,\n            \"lng\": null,\n            \"distinctive_mark\": null\n        },\n        \"owner_name\": \"احمد حمدي الشربيني\",\n        \"phone\": \"+201550504823\",\n        \"additional_phone\": null,\n        \"type\": \"Pharmacy\",\n        \"vat_number\": \"558382868286855\",\n        \"status\": 1,\n        \"status_label\": \"active\"\n    }\n}"
+						}
+					]
 				}
 			]
 		},
@@ -2433,7 +2884,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{site_url}}/admin/wholesalers?status=1&search=test",
+							"raw": "{{site_url}}/admin/wholesalers",
 							"host": [
 								"{{site_url}}"
 							],
@@ -2444,11 +2895,13 @@
 							"query": [
 								{
 									"key": "status",
-									"value": "1"
+									"value": "1",
+									"disabled": true
 								},
 								{
 									"key": "search",
-									"value": "test"
+									"value": "test",
+									"disabled": true
 								}
 							]
 						}
@@ -2604,6 +3057,195 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "0",
+									"description": "ACTIVE = 1, INACTIVE = 0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/wholesalers/1/update-status",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"wholesalers",
+								"1",
+								"update-status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update status",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "0",
+											"description": "ACTIVE = 1, INACTIVE = 0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}/admin/retailers/9/update-status",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"retailers",
+										"9",
+										"update-status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 21:06:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "390"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "x-ratelimit-limit",
+									"value": "60"
+								},
+								{
+									"key": "x-ratelimit-remaining",
+									"value": "56"
+								},
+								{
+									"key": "content-encoding",
+									"value": "br"
+								},
+								{
+									"key": "platform",
+									"value": "hostinger"
+								},
+								{
+									"key": "panel",
+									"value": "hpanel"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "upgrade-insecure-requests"
+								},
+								{
+									"key": "Server",
+									"value": "hcdn"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								},
+								{
+									"key": "x-hcdn-request-id",
+									"value": "5936d482f30ccc24c5248d7714a0755b-srv-edge3"
+								},
+								{
+									"key": "x-hcdn-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "x-hcdn-upstream-rt",
+									"value": "0.076"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Updated successfully\",\n    \"data\": {\n        \"id\": 9,\n        \"name\": \"منشأه\",\n        \"address\": {\n            \"address\": \"ززز\",\n            \"country\": \"Egypt\",\n            \"country_id\": 64,\n            \"state\": \"as-Suways\",\n            \"state_id\": 1075,\n            \"city\": \"as-Suways\",\n            \"city_id\": 15593,\n            \"region\": \"Default For Now\",\n            \"region_id\": null,\n            \"street_name\": \"تتت\",\n            \"facility_number\": \"325\",\n            \"lat\": null,\n            \"lng\": null,\n            \"distinctive_mark\": null\n        },\n        \"owner_name\": \"احمد حمدي الشربيني\",\n        \"phone\": \"+201550504823\",\n        \"additional_phone\": null,\n        \"type\": \"Pharmacy\",\n        \"vat_number\": \"558382868286855\",\n        \"status\": 1,\n        \"status_label\": \"active\"\n    }\n}"
+						}
+					]
 				}
 			]
 		},
@@ -4074,7 +4716,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{site_url}}/admin/regions?search=new Rsegion 4a1as",
+							"raw": "{{site_url}}/admin/regions",
 							"host": [
 								"{{site_url}}"
 							],
@@ -4085,7 +4727,8 @@
 							"query": [
 								{
 									"key": "search",
-									"value": "new Rsegion 4a1as"
+									"value": "new Rsegion 4a1as",
+									"disabled": true
 								}
 							]
 						}
@@ -4852,7 +5495,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{site_url}}/admin/states?page=false&limit=false",
+							"raw": "{{site_url}}/admin/states?page=false&limit=false&country=64",
 							"host": [
 								"{{site_url}}"
 							],
@@ -4868,6 +5511,10 @@
 								{
 									"key": "limit",
 									"value": "false"
+								},
+								{
+									"key": "country",
+									"value": "64"
 								}
 							]
 						}
@@ -5086,7 +5733,7 @@
 								},
 								{
 									"key": "email",
-									"value": "yasser.m22291@gmail.com",
+									"value": "yasser.m22269@gmail.com",
 									"type": "text"
 								},
 								{
@@ -5098,9 +5745,9 @@
 							]
 						},
 						"url": {
-							"raw": "{{HOST}}/admin/companies",
+							"raw": "{{site_url}}/admin/companies",
 							"host": [
-								"{{HOST}}"
+								"{{site_url}}"
 							],
 							"path": [
 								"admin",
@@ -5344,6 +5991,195 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "0",
+									"description": "ACTIVE = 1, INACTIVE = 0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/companies/100/update-status",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"companies",
+								"100",
+								"update-status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update status",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "0",
+											"description": "ACTIVE = 1, INACTIVE = 0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}/admin/retailers/9/update-status",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"retailers",
+										"9",
+										"update-status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 21:06:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "390"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "x-ratelimit-limit",
+									"value": "60"
+								},
+								{
+									"key": "x-ratelimit-remaining",
+									"value": "56"
+								},
+								{
+									"key": "content-encoding",
+									"value": "br"
+								},
+								{
+									"key": "platform",
+									"value": "hostinger"
+								},
+								{
+									"key": "panel",
+									"value": "hpanel"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "upgrade-insecure-requests"
+								},
+								{
+									"key": "Server",
+									"value": "hcdn"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								},
+								{
+									"key": "x-hcdn-request-id",
+									"value": "5936d482f30ccc24c5248d7714a0755b-srv-edge3"
+								},
+								{
+									"key": "x-hcdn-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "x-hcdn-upstream-rt",
+									"value": "0.076"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Updated successfully\",\n    \"data\": {\n        \"id\": 9,\n        \"name\": \"منشأه\",\n        \"address\": {\n            \"address\": \"ززز\",\n            \"country\": \"Egypt\",\n            \"country_id\": 64,\n            \"state\": \"as-Suways\",\n            \"state_id\": 1075,\n            \"city\": \"as-Suways\",\n            \"city_id\": 15593,\n            \"region\": \"Default For Now\",\n            \"region_id\": null,\n            \"street_name\": \"تتت\",\n            \"facility_number\": \"325\",\n            \"lat\": null,\n            \"lng\": null,\n            \"distinctive_mark\": null\n        },\n        \"owner_name\": \"احمد حمدي الشربيني\",\n        \"phone\": \"+201550504823\",\n        \"additional_phone\": null,\n        \"type\": \"Pharmacy\",\n        \"vat_number\": \"558382868286855\",\n        \"status\": 1,\n        \"status_label\": \"active\"\n    }\n}"
+						}
+					]
 				}
 			],
 			"auth": {
@@ -5498,21 +6334,21 @@
 								},
 								{
 									"key": "email",
-									"value": "yasser.m22291@gmail.com",
+									"value": "yasser.m22269@gmail.com",
 									"type": "text"
 								},
 								{
 									"key": "phone",
-									"value": "+20123456789",
+									"value": "+20123456780",
 									"description": "sometimes",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{HOST}}/admin/vendors",
+							"raw": "{{site_url}}/admin/vendors",
 							"host": [
-								"{{HOST}}"
+								"{{site_url}}"
 							],
 							"path": [
 								"admin",
@@ -5682,6 +6518,195 @@
 					"response": []
 				},
 				{
+					"name": "update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "0",
+									"description": "ACTIVE = 1, INACTIVE = 0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{site_url}}/admin/vendors/1/update-status",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"vendors",
+								"1",
+								"update-status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update status",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "0",
+											"description": "ACTIVE = 1, INACTIVE = 0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{site_url}}/admin/retailers/9/update-status",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"retailers",
+										"9",
+										"update-status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 21:06:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "390"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "PHP/8.2.27"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true"
+								},
+								{
+									"key": "x-ratelimit-limit",
+									"value": "60"
+								},
+								{
+									"key": "x-ratelimit-remaining",
+									"value": "56"
+								},
+								{
+									"key": "content-encoding",
+									"value": "br"
+								},
+								{
+									"key": "platform",
+									"value": "hostinger"
+								},
+								{
+									"key": "panel",
+									"value": "hpanel"
+								},
+								{
+									"key": "content-security-policy",
+									"value": "upgrade-insecure-requests"
+								},
+								{
+									"key": "Server",
+									"value": "hcdn"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								},
+								{
+									"key": "x-hcdn-request-id",
+									"value": "5936d482f30ccc24c5248d7714a0755b-srv-edge3"
+								},
+								{
+									"key": "x-hcdn-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "x-hcdn-upstream-rt",
+									"value": "0.076"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Updated successfully\",\n    \"data\": {\n        \"id\": 9,\n        \"name\": \"منشأه\",\n        \"address\": {\n            \"address\": \"ززز\",\n            \"country\": \"Egypt\",\n            \"country_id\": 64,\n            \"state\": \"as-Suways\",\n            \"state_id\": 1075,\n            \"city\": \"as-Suways\",\n            \"city_id\": 15593,\n            \"region\": \"Default For Now\",\n            \"region_id\": null,\n            \"street_name\": \"تتت\",\n            \"facility_number\": \"325\",\n            \"lat\": null,\n            \"lng\": null,\n            \"distinctive_mark\": null\n        },\n        \"owner_name\": \"احمد حمدي الشربيني\",\n        \"phone\": \"+201550504823\",\n        \"additional_phone\": null,\n        \"type\": \"Pharmacy\",\n        \"vat_number\": \"558382868286855\",\n        \"status\": 1,\n        \"status_label\": \"active\"\n    }\n}"
+						}
+					]
+				},
+				{
 					"name": "Delete",
 					"request": {
 						"method": "DELETE",
@@ -5747,6 +6772,164 @@
 							""
 						]
 					}
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{site_url}}/admin/orders?vendor_type=company&orderBy=total&orderDir=desc",
+							"host": [
+								"{{site_url}}"
+							],
+							"path": [
+								"admin",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "vendor_type",
+									"value": "company",
+									"description": "company or vendor   : Required"
+								},
+								{
+									"key": "orderBy",
+									"value": "total"
+								},
+								{
+									"key": "orderDir",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{site_url}}/admin/orders?vendor_type=company",
+									"host": [
+										"{{site_url}}"
+									],
+									"path": [
+										"admin",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "vendor_type",
+											"value": "company",
+											"description": "company or vendor   : Required"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.18.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Feb 2025 21:47:48 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, X-Auth-Token, Origin, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"discount\": \"0.00\",\n            \"total\": \"3400.52\",\n            \"status\": 0,\n            \"status_label\": \"Pending\",\n            \"payment_method\": 0,\n            \"payment_method_label\": \"cash\",\n            \"created_at\": \"2025-02-16 21:58:30\",\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"ABC Corp\",\n                \"vendor_type\": \"company\",\n                \"image\": \"\"\n            },\n            \"user\": {\n                \"id\": 2,\n                \"name\": \"Tajzea\",\n                \"owner_name\": \"Ahmed Eid\",\n                \"phone\": \"+201007642441\",\n                \"business_type\": 1,\n                \"business_type_label\": \"wholesaler\",\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 2,\n            \"discount\": \"0.00\",\n            \"total\": \"3717.32\",\n            \"status\": 0,\n            \"status_label\": \"Pending\",\n            \"payment_method\": 0,\n            \"payment_method_label\": \"cash\",\n            \"created_at\": \"2025-02-16 21:43:26\",\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"ABC Corp\",\n                \"vendor_type\": \"company\",\n                \"image\": \"\"\n            },\n            \"user\": {\n                \"id\": 2,\n                \"name\": \"Tajzea\",\n                \"owner_name\": \"Ahmed Eid\",\n                \"phone\": \"+201007642441\",\n                \"business_type\": 1,\n                \"business_type_label\": \"wholesaler\",\n                \"image\": null\n            }\n        },\n        {\n            \"id\": 1,\n            \"discount\": \"0.00\",\n            \"total\": \"548.31\",\n            \"status\": 0,\n            \"status_label\": \"Pending\",\n            \"payment_method\": 0,\n            \"payment_method_label\": \"cash\",\n            \"created_at\": \"2025-02-13 20:49:56\",\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"ABC Corp\",\n                \"vendor_type\": \"company\",\n                \"image\": \"\"\n            },\n            \"user\": {\n                \"id\": 2,\n                \"name\": \"Tajzea\",\n                \"owner_name\": \"Ahmed Eid\",\n                \"phone\": \"+201007642441\",\n                \"business_type\": 1,\n                \"business_type_label\": \"wholesaler\",\n                \"image\": null\n            }\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://willgo.test/admin/orders?page=1\",\n        \"last\": \"http://willgo.test/admin/orders?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://willgo.test/admin/orders?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://willgo.test/admin/orders\",\n        \"per_page\": 10,\n        \"to\": 3,\n        \"total\": 3\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			]
 		}

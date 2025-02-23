@@ -31,8 +31,8 @@
 							"formdata": [
 								{
 									"key": "step",
-									"value": "3",
-									"description": "INITIAL = 0 , BUSINESS_TYPE = 1, LOCATION = 2, DETAILS = 3",
+									"value": "4",
+									"description": "INITIAL = 0 , \nBUSINESS_TYPE = 1, \nLOCATION = 2, \nDETAILS = 3\nComplete = 4 ",
 									"type": "text"
 								},
 								{
@@ -45,13 +45,15 @@
 									"key": "business_type",
 									"value": "1",
 									"description": "STEP : 1  - Required        0  => RETAILER, 1=> WHOLESALER",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "address",
 									"value": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
 									"description": "STEP : 2  - Required",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "country_id",
@@ -63,31 +65,36 @@
 									"key": "state_id",
 									"value": "1",
 									"description": "STEP : 2  - Required",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "city_id",
 									"value": "1",
 									"description": "STEP : 2  - Required",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "street_name",
 									"value": "Lorem ipsum",
 									"description": "STEP : 2",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "facility_number",
 									"value": "4521",
 									"description": "STEP : 2  - Required",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "distinctive_mark",
 									"value": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
 									"description": "STEP : 2",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "lat",
@@ -107,37 +114,54 @@
 									"key": "type",
 									"value": "1",
 									"description": "STEP : 2  - Required",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "name",
 									"value": "Tajzea",
 									"description": "STEP : 3",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "owner_name",
 									"value": "Ahmed Eid",
 									"description": "STEP : 3  - Required",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "additional_phone",
 									"value": "",
 									"description": "STEP : 3",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "vat_number",
-									"value": "123456789323757",
+									"value": "123456789337177",
 									"description": "STEP : 3  - Required",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "image",
 									"description": "STEP : 3",
 									"type": "file",
-									"src": "/D:/OTHERS/3.Apps/Customization/WALLPAPERS/New folder/astronaut_neon_art_148365_1920x1080.jpg"
+									"src": "/D:/OTHERS/3.Apps/Customization/WALLPAPERS/New folder/astronaut_neon_art_148365_1920x1080.jpg",
+									"disabled": true
+								},
+								{
+									"key": "interests[0]",
+									"value": "60",
+									"description": "STEP : 4 Optional Array of Category LEVEL 3 \"TYPES\"",
+									"type": "text"
+								},
+								{
+									"key": "interests[1]",
+									"value": "58",
+									"type": "text"
 								}
 							]
 						},
@@ -1634,7 +1658,7 @@
 								},
 								{
 									"key": "quantity",
-									"value": "7",
+									"value": "20",
 									"type": "text"
 								}
 							]
@@ -1717,13 +1741,24 @@
 							}
 						],
 						"url": {
-							"raw": "{{mbile_retailer_url}}/carts/clear",
+							"raw": "{{mbile_retailer_url}}/carts/clear?vendor_id=1&vendor_type=company",
 							"host": [
 								"{{mbile_retailer_url}}"
 							],
 							"path": [
 								"carts",
 								"clear"
+							],
+							"query": [
+								{
+									"key": "vendor_id",
+									"value": "1"
+								},
+								{
+									"key": "vendor_type",
+									"value": "company",
+									"description": "company, vendor"
+								}
 							]
 						}
 					},
@@ -1806,7 +1841,19 @@
 						],
 						"body": {
 							"mode": "formdata",
-							"formdata": []
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "vendor_type",
+									"value": "company",
+									"description": "company, vendor",
+									"type": "text"
+								}
+							]
 						},
 						"url": {
 							"raw": "{{mbile_retailer_url}}/carts/checkout",
